@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 101</title>
+
+  <!-- Bootstrap -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="jumbotron">
+  	<h1>Bootstrap</h1>
+  	<p>
+  		João Eduardo Montandon <br>
+  		Desenvolvimento de Aplicações Web - COLTEC/UFMG
+  	</p>
+	</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+        <p class="lead">
+          Idealizado e implementado por <a href="https://twitter.com/mdo">@mdo</a> e <a href="https://twitter.com/fat">@fat</a> - dois desenvolvedores do Twitter - Bootstrap é um framework CSS com um propósito muito claro: ajudar desenvolvedores no processo de implementação de interfaces web. 
+        </p>
+      
+        <p>
+          Diferentemente de outros frameworks, tais como jQuery e Kendo UI, Bootstrap foi projetado para garantir um layout bonito, mas consistente de sua página web. 
+        </p>
+
+        <p>
+          Dentre sua lista de recursos, podemos destacar:
+        </p>
+
+        <ul>
+          <li>Suporte ao layout responsivo</li>
+          <li>Grande leque de propriedades CSS</li>
+          <li>Suporte a ícones e componentes HTML customizados</li>
+          <li>Conjunto de bibliotecas JavaScript com as mais diversas funcionalidades (jQuery, Modais, Transições, etc.)</li>
+        </ul>
+
+        <p>
+          Atualmente, Bootstrap é o framework CSS mais utilizado entre os desenvolvedores web. Nesta apostila iremos demonstrar os principais recursos por trás deste grande framework.
+        </p>
+
+
+        <h1 class="page-header">Instalação e Configuração</h1>
+        <p>
+          O Bootstrap pode ser baixado por meio deste <a href="http://getbootstrap.com/getting-started/#download">link</a>. Basicamente, o Bootstrap pode ser configurado de três formas diferentes:
+
+          <ul>
+            <li>Compilado</li>
+            <li>Código Fonte</li>
+            <li>Content Delivery Network (CDN)</li>
+          </ul>
+        </p>
+
+        <h3>Compilado</h3>
+        <p>
+          Para configurar o Bootstrap compilado, deve-se fazer o download do arquivo compactado, e então extraí-lo na pasta onde está localizada a sua aplicação web.
+        </p>
+        <p>
+          Em seguida, basta importar o Bootstrap dentro da página HTML de seu interesse, como podemos ver no exemplo abaixo:
+        </p>
+        <br>
+        <pre>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+  &lt;head>
+    &lt;meta charset="utf-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+    &lt;title>Bootstrap 101 Template&lt;/title>
+
+    &lt;!-- Bootstrap -->
+    &lt;link href="css/bootstrap.min.css" rel="stylesheet">
+
+    &lt;!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    &lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    &lt;!--[if lt IE 9]>
+      &lt;script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js">&lt;/script>
+      &lt;script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js">&lt;/script>
+    &lt;![endif]-->
+  &lt;/head>
+  &lt;body>
+    &lt;!-- Código HTML aqui!!! -->
+
+    &lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">&lt;/script>
+    &lt;!-- Include all compiled plugins (below), or include individual files as needed -->
+    &lt;script src="js/bootstrap.min.js">&lt;/script>
+  &lt;/body>
+&lt;/html>
+        </pre>      
+
+        <h3>Código Fonte</h3>
+        <p>
+          Os estilos presentes no Bootstrap estão disponíveis tanto em Less quanto em Sass.
+        </p>
+        <p>
+          Em ambos os casos, código fonte - seja ele Less ou Sass - deverá ser compilado para geração do CSS a ser utilizado na sua página web. 
+        </p>
+
+        <p>
+          Uma vez compilado, deve-se realizar o mesmo processo descrito na sessão anterior para inclusão do Bootstrap na sua página.
+        </p>
+
+
+        <h3>Content Delivery Network (CDN)</h3>
+        <p>
+          Uma versão do Bootstrap está disponível via CDN. Para utilizá-la, basta o código necessário para importar os arquivos necessários. Neste caso, basta substituir os comandos de inclusão descritos anteriormente pelos comandos abaixo:
+        </p>
+        <br>
+        <pre>
+&lt;!-- Latest compiled and minified CSS -->
+&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+&lt;!-- Optional theme -->
+&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+&lt;!-- Latest compiled and minified JavaScript -->
+&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">&lt;/script>
+        </pre>
+
+      <div class="section">
+        <h1 class="page-header">Hello, Bootstrap!!</h1>
+
+        Após baixar e configurar o Bootstrap, crie o arquivo <code>index.html</code> na pasta raiz, e adicione o seguinte código:
+
+        <pre>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+  &lt;head>
+    &lt;meta charset="utf-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+    &lt;title>Bootstrap 101 Template&lt;/title>
+
+    &lt;!-- Bootstrap -->
+    &lt;link href="css/bootstrap.min.css" rel="stylesheet">
+
+    &lt;!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    &lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    &lt;!--[if lt IE 9]>
+      &lt;script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js">&lt;/script>
+      &lt;script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js">&lt;/script>
+    &lt;![endif]-->
+  &lt;/head>
+  &lt;body>
+    &lt;h1> Hello Bootstrap&lt;/h1>
+
+    &lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">&lt;/script>
+    &lt;!-- Include all compiled plugins (below), or include individual files as needed -->
+    &lt;script src="js/bootstrap.min.js">&lt;/script>
+  &lt;/body>
+&lt;/html>
+        </pre>         
+
+        <p>
+          Como podemos observar, o título <b>Hello, Bootstrap</b> apresenta um estilo diferente do padrão. Isto acontece pois o Bootstrap fornece um conjunto de estilo padrão para todos os elementos headers presentes no HTML.
+        </p>
+
+        <p>
+          Observe também que não foi necessário fazer nenhuma configuração na sua página HTML, a não ser a inclusão dos arquivos <code>bootstrap.min.css</code>, <code>bootstrap.min.js</code>, e <code>jquery.min.js</code>.
+        </p>
+
+        <p class="lead">
+          O restante desta apostila irá mostrar como utilizar os principais recursos do Bootstrap. Sempre que necessário, consulte diretamente a documentação do Bootstrap, presente neste <a href="http://getbootstrap.com/">link</a>.
+        </p>
+
+      </div>
+
+      <div class="section">
+        <h1 class="page-header">Sistema de Grid</h1>
+        <p class="lead">
+          Qualquer um que já tentou desenhar um layout em colunas, sabe o quanto isso é trabalhoso. Bootstrap torna essa tarefa muito mais fácil. Por padrão, Bootstrap já vem embutido com um sistema de grid de 12 colunas, o qual se adapta automaticamente de acordo com o tamanho da tela no qual a página será renderizada.
+        </p>
+
+        <p>O sistema de grid do Bootstrap funciona com base nas seguintes regras:</p>
+
+        <ul>
+          <li>O conteúdo da página deve ser inserido dentro de células, especificadas por meio de propriedades como <code>.col-xs-*</code>, <code>.col-sm-*</code>, <code>.col-md-*</code> ou <code>.col-lg-*</code>.</li>
+          <li>As células devem ser inseridas apenas dentro de linhas, representados pela propriedade <code>.row</code>.</li>
+          <li>As linhas servem para alinhas horizontalmente as células do grid.</li>
+          <li>As linhas do grid devem ser inseridas dentro de um <code>.container</code> ou <code>.container-fluid</code>.</li>
+          <li>É possível definir o número de colunas que cada célula irá ocupar na linha, substituindo o * pelo tamanho desejado. Por exemplo: a célula <code>.col-sm-6</code> ocupa 6 colunas. </li>
+          <li>Uma célula pode ocupar de 1 a 12 colunas.</li>
+        </ul>
+
+        <h3>Exemplo</h3>
+
+        <p>
+          O código abaixo mostra um exemplo de utilização do sistema de grid do Bootstrap.
+        </p>
+
+        <div id="example-grid01">
+          <div class="row">
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">.col-md-8</div>
+            <div class="col-md-4">.col-md-4</div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4">.col-md-4</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">.col-md-6</div>
+            <div class="col-md-6">.col-md-6</div>
+          </div>
+        </div>
+        <br>
+        <pre>
+&lt;div class="container">            
+  &lt;div class="row">
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+    &lt;div class="col-md-1">.col-md-1&lt;/div>
+  &lt;/div>
+  &lt;div class="row">
+    &lt;div class="col-md-8">.col-md-8&lt;/div>
+    &lt;div class="col-md-4">.col-md-4&lt;/div>
+  &lt;/div>
+  &lt;div class="row">
+    &lt;div class="col-md-4">.col-md-4&lt;/div>
+    &lt;div class="col-md-4">.col-md-4&lt;/div>
+    &lt;div class="col-md-4">.col-md-4&lt;/div>
+  &lt;/div>
+  &lt;div class="row">
+    &lt;div class="col-md-6">.col-md-6&lt;/div>
+    &lt;div class="col-md-6">.col-md-6&lt;/div>
+  &lt;/div>
+&lt;/div>
+        </pre>
+
+          <h3>Exercício</h3>
+          <p>Reimplemente o exemplo anterior, porém utilizando a propriedade <code>.container-fluid</code> e veja o que acontece.</p>
+
+          <h2>Layout para Mobile, Tablets, e Smartphone</h2>
+
+          <p>
+            Bootstrap fornece uma forma muito simples de tonar sua página responsiva para dispositivos mobile.
+          </p>
+
+          <p>
+            Para isto, Bootstrap permite a combinação entre as propriedades <code>.col-xs-*</code>, <code>.col-sm-*</code>, <code>.col-md-*</code> ou <code>.col-lg-*</code> para fornecer uma melhor experiência para o usuário.
+          </p>
+
+          <p>
+            Mas qual a diferença entre essas propriedades? Basicamente, essas propriedades definem o tamanho - em pixels - de cada célula. Além disso, essas propriedades definem o comportamento das células no que diz respeito a relação de si mesmas com os demais componentes da página. Por exemplo, tais propriedades definem quando as células deverão se alinhar horizontalmente e verticalmente. A tabela abaixo detalha o aspecto de cada uma dessas propriedades:
+          </p>
+
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th></th>
+                <th>
+                  Dispositivos muito pequenos <br>
+                  <small>Telefones (&lt;768px)</small>
+                </th>
+                <th>
+                  Dispositivos Pequenos <br>
+                  <small>Tablets (≥768px)</small>
+                </th>
+                <th>
+                  Dispositivos padões <br>
+                  <small>PCs (≥992px)</small>
+                </th>
+                <th>
+                  Grandes Dispositivos <br>
+                  <small>PCs (≥1200px)</small>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-nowrap">Comportamento do Grid</th>
+                <td>Sempre horizontal</td>
+                <td colspan="3">Inicialmente vertical, horizontal para larguras superiores ao breakpoint.</td>
+              </tr>
+              <tr>
+                <th class="text-nowrap">Tamanho do container</th>
+                <td>Nenhum (auto)</td>
+                <td>750px</td>
+                <td>970px</td>
+                <td>1170px</td>
+              </tr>
+              <tr>
+                <th class="text-nowrap">Prefixo da Propriedade</th>
+                <td><code>.col-xs-</code></td>
+                <td><code>.col-sm-</code></td>
+                <td><code>.col-md-</code></td>
+                <td><code>.col-lg-</code></td>
+              </tr>
+              <tr>
+                <th class="text-nowrap"># de colunas</th>
+                <td colspan="4">12</td>
+              </tr>
+              <tr>
+                <th class="text-nowrap">Largura da Coluna</th>
+                <td class="text-muted">Auto</td>
+                <td>~62px</td>
+                <td>~81px</td>
+                <td>~97px</td>
+              </tr>
+              <tr>
+                <th class="text-nowrap">Largura do espaçamento</th>
+                <td colspan="4">30px (15px de cada lado)</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <p>
+            Isto é, caso você desejar customizar o layout para PC e Tablets, você deverá utilizar as propriedades <code>.col-sm-</code> e <code>.col-md-</code>. Para adicionar suporte a telas menores basta adicionar a propriedade <code>.col-xs-</code> as suas células.
+          </p>
+
+          <p>
+            É importante ressaltar que você pode definir o quanto cada propriedade <code>.col-</code> irá ocupar, tornando assim o seu layout ainda mais rico e customizável. Por exemplo, é possível definir uma célula da seguinte forma: <code>&lt;div class=".col-xs-12 .col-md-6"></code>
+          </p>
+
+          <h4>Exemplo: Layout Tablet & Desktop</h4>
+
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <p class="bg-success">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <p class="bg-danger">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+          <br>
+          <pre>
+&lt;div class="row">
+  &lt;div class="col-sm-12 col-md-6">
+    &lt;p class="bg-success">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    &lt;/p>
+  &lt;/div>
+  &lt;div class="col-sm-12 col-md-6">
+    &lt;p class="bg-danger">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    &lt;/p>
+  &lt;/div>
+&lt;/div>
+          </pre>
+
+
+          <h4>Exemplo: Layout Smartphone, Tablet & Desktop</h4>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <p class="bg-success">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <p class="bg-info">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4">
+              <p class="bg-warning">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+          <br>
+          <pre>
+&lt;div class="row">
+  &lt;div class="col-xs-12 col-sm-6 col-md-4">
+    &lt;p class="bg-success">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    &lt;/p>
+  &lt;/div>
+  &lt;div class="col-xs-12 col-sm-6 col-md-4">
+    &lt;p class="bg-info">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    &lt;/p>
+  &lt;/div>
+  &lt;div class="col-xs-12 col-sm-12 col-md-4">
+    &lt;p class="bg-warning">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    &lt;/p>
+  &lt;/div>
+&lt;/div>
+          </pre>
+
+
+          <h2>A Propriedade <code>.offset</code></h2>
+
+          <p>
+            Bootstrap também fornece recursos para criar espaçamento entre as células para a criação de um layout mais dinâmico.
+          </p>
+
+          <p>
+            Para este espaçamento devemos definir a propriedade <code>.col-*-offset-N</code> a um elemento, onde <code>*</code> representa para quais dimensões o espaçamento deve existir, e <col>N</col> representa a quantidade de colunas que se deseja criar como espaçamento.
+          </p>
+
+
+          <h4>Exemplo</h4>
+          <div class="row">
+            <div class="col-md-4 bg-success">.col-md-4</div>
+            <div class="col-md-4 col-lg-offset-4 bg-info">.col-md-4 .col-lg-offset-4</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-3 bg-warning">.col-md-3 .col-md-offset-3</div>
+            <div class="col-md-3 col-sm-offset-3 bg-danger">.col-md-3 .col-sm-offset-3</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-xs-offset-3 bg-primary">.col-md-6 .col-xs-offset-3</div>
+          </div>
+          <br>
+          <pre>
+&lt;div class="row">
+  &lt;div class="col-md-4 bg-success">.col-md-4&lt;/div>
+  &lt;div class="col-md-4 col-lg-offset-4 bg-info">.col-md-4 .col-lg-offset-4&lt;/div>
+&lt;/div>
+&lt;div class="row">
+  &lt;div class="col-md-3 col-md-offset-3 bg-warning">.col-md-3 .col-md-offset-3&lt;/div>
+  &lt;div class="col-md-3 col-sm-offset-3 bg-danger">.col-md-3 .col-sm-offset-3&lt;/div>
+&lt;/div>
+&lt;div class="row">
+  &lt;div class="col-md-6 col-xs-offset-3 bg-primary">.col-md-6 .col-xs-offset-3&lt;/div>
+&lt;/div>
+          </pre>
+
+          
+          <h2>Colunas Aninhadas</h2>
+
+          <p>
+            Para aninhar células, basta adicionar um novo <code>.row</code> dentro da célula que se deseja aninhar. Assim como as demais, a nova linha adicionada poderá receber até 12 colunas, no entanto seu container estará limitado a célula ao qual ela está inclusa.
+          </p>
+
+          <h4>Exemplo</h4>
+          <div class="row">
+            <div class="col-sm-9 bg-info">
+              Level 1: .col-sm-9
+              <div class="row">
+                <div class="col-xs-8 col-sm-6 bg-primary">
+                  Level 2: .col-xs-8 .col-sm-6
+                </div>
+                <div class="col-xs-4 col-sm-6 bg-primary">
+                  Level 2: .col-xs-4 .col-sm-6
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <pre>
+&lt;div class="row">
+  &lt;div class="col-sm-9 bg-info">
+    Level 1: .col-sm-9
+    &lt;div class="row">
+      &lt;div class="col-xs-8 col-sm-6 bg-primary">
+        Level 2: .col-xs-8 .col-sm-6
+      &lt;/div>
+      &lt;div class="col-xs-4 col-sm-6 bg-primary">
+        Level 2: .col-xs-4 .col-sm-6
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+          </pre>
+
+          <h1 class="page-header">Tipografia</h1>
+
+          <p class="lead">
+            Bootstrap possui um conjunto de estilos pré-definidos voltado para os principais elementos textuais do HTML. Nesta sessão exploraremos detalhadamente cada um deles.
+          </p>
+
+          <h2>Headings</h2>
+
+          <p>
+            Todos os headings presentes no HTML foram customizados pelo Bootstrap. Além disso, se for o caso, você pode utilizar as classes <code>.h1</code>..<code>.h6</code> para customizar elementos específicos com o mesmo estilo de seus respectivos headings. 
+          </p>
+
+          <p>
+            Além disso, você pode combinar qualquer título com um texto menor, por meio do elemento <code>&lt;small></code> ou da classe <code>.small</code>.
+          </p>
+
+          <h4>Exemplo</h4>
+
+          <h1>h1. Bootstrap heading <small>Secondary text</small></h1>
+          <h2>h2. Bootstrap heading <small>Secondary text</small></h2>
+          <h3>h3. Bootstrap heading <small>Secondary text</small></h3>
+          <h4>h4. Bootstrap heading <small>Secondary text</small></h4>
+          <h5>h5. Bootstrap heading <small>Secondary text</small></h5>
+          <h6>h6. Bootstrap heading <small>Secondary text</small></h6>
+
+          <pre>
+&lt;h1>h1. Bootstrap heading &lt;small>Secondary text&lt;/small>&lt;/h1>
+&lt;h2>h2. Bootstrap heading &lt;small>Secondary text&lt;/small>&lt;/h2>
+&lt;h3>h3. Bootstrap heading &lt;small>Secondary text&lt;/small>&lt;/h3>
+&lt;h4>h4. Bootstrap heading &lt;small>Secondary text&lt;/small>&lt;/h4>
+&lt;h5>h5. Bootstrap heading &lt;small>Secondary text&lt;/small>&lt;/h5>
+&lt;h6>h6. Bootstrap heading &lt;small>Secondary text&lt;/small>&lt;/h6>
+          </pre>
+
+
+          <h2>Parágrafos</h2>
+
+          <p>Por padrão, o Bootstrap trabalha com a fonte no tamanho de <strong>14px</strong>, e um espaçamento de <strong>1.428</strong> entre as linhas. Além disso, todos os parágrafos possuem a propriedade <code>bottom-margin</code> equivalente a metade do espaçamento das linhas (~10px por padrão).</p>
+
+          <p>Além disso, você pode fazer um parágrafo se destacar dos demais por meio da propriedade <code>lead</code>, como pode ser observado abaixo:</p>
+
+          <h4>Exemplo</h4>
+          <p class="lead">Este é um parágrafo de destque, onde você pode escrever algo para chamar atenção de seus leitores.</p>
+
+          <p>Já este é um parágrafo normal, sem nenhum tipo de destaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+
+          <pre>
+&lt;p class="lead">Este é um parágrafo de destque, onde você pode escrever algo para chamar atenção de seus leitores.&lt;/p>
+
+&lt;p>Já este é um parágrafo normal, sem nenhum tipo de destaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.&lt;/p>
+          </pre>
+
+          <h2>Marcações de Texto</h2>
+          <p>
+            Bootstrap também lhe fornece vários recursos para fazer marcações em seu texto, tais como destaque de texto, sublinhado, negrito, itálico, etc.
+          </p>
+
+          <h4>Exemplo</H4>
+          <table class="table table-bordered table-hover">
+            <tr><td>
+              <p>Esta é uma frase que possui um texto de <mark>destaque</mark>. Para esse destaque utiliza-se o elemento <code>&lt;mark> ... &lt;/mark></code>.</p>
+            </td></tr>
+            <tr><td>
+              <p>Também podemos sublinhar um determinado trecho. Para isto, você pode utilizar o elemento <code>&lt;ins></code> ou <code>&lt;u></code>.</p>
+            </td></tr>
+            <tr><td>
+              <p>Para cortar um determinado trecho do texto, <del>basta utilizar o elemento <code>&lt;p></code></del> devemos utilizar o elemento <code>&lt;s></code> ou <code>&lt;del></code>.</p>
+            </td></tr>
+            <tr><td>
+              <p>O negrito pode ser <strong>utilizado</strong> por meio do elemento <code>&lt;strong></code></p>
+            </td></tr>
+            <tr><td>
+              <p>Por fim, o itálico pode ser aplicado por meio do elemento <code>&lt;em></code>. <em>Bacana não é??</em></p>
+            </td></tr>
+          </table>
+
+          <pre>
+&lt;p>Esta é uma frase que possui um texto de &lt;mark>destaque&lt;/mark>. Para esse destaque utiliza-se o elemento &lt;code>&lt;mark> ... &lt;/mark>&lt;/code>.&lt;/p>
+
+&lt;p>Também podemos sublinhar um determinado trecho. Para isto, você pode utilizar o elemento &lt;code>&lt;ins>&lt;/code> ou &lt;code>&lt;u>&lt;/code>.&lt;/p>
+
+&lt;p>Para cortar um determinado trecho do texto, &lt;del>basta utilizar o elemento &lt;code>&lt;p>&lt;/code>&lt;/del> devemos utilizar o elemento &lt;code>&lt;s>&lt;/code> ou &lt;code>&lt;del>&lt;/code>.&lt;/p>
+
+&lt;p>O negrito pode ser &lt;strong>utilizado&lt;/strong> por meio do elemento &lt;code>&lt;strong>&lt;/code>&lt;/p>
+
+&lt;p>Por fim, o itálico pode ser aplicado por meio do elemento &lt;code>&lt;em>&lt;/code>. &lt;em>Bacana não é??&lt;/em>&lt;/p>
+          </pre>
+
+          <h2>Classes de Alinhamento</h2>
+
+          <p>Fazer alinhamento de texto é extremamente simples!!</p>
+
+
+          <h4>Exemplo</h4>
+          <p class="text-left">Alinhado a esquerda.</p>
+          <p class="text-center">Centralizado.</p>
+          <p class="text-right">Alinhado a direita.</p>
+          <p class="text-justify">Justificado.</p>
+          <p class="text-nowrap"> Texto sem quebra de linhaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa.</p>
+
+          <pre>
+&lt;p class="text-left">Alinhado a esquerda.&lt;/p>
+&lt;p class="text-center">Centralizado.&lt;/p>
+&lt;p class="text-right">Alinhado a direita.&lt;/p>
+&lt;p class="text-justify">Justificado.&lt;/p>
+&lt;p class="text-nowrap"> Texto sem quebra de linhaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa.&lt;/p>
+          </pre>
+
+          <h2>Classes de Transformação</h2>
+
+          <p>Também é possível fazer algumas transformações básicas no texto, tais como colocar o texto em caixa baixa, caixa alta, ou capitalizado.</p>
+
+          <h4>Exemplo</h4>
+          <p class="text-lowercase">TEXTO EM CAIXA BAIXA.</p>
+          <p class="text-uppercase">texto em caixa alta.</p>
+          <p class="text-capitalize">texto capitalizado.</p>
+
+          <pre>
+&lt;p class="text-lowercase">TEXTO EM CAIXA BAIXA.&lt;/p>
+&lt;p class="text-uppercase">texto em caixa alta.&lt;/p>
+&lt;p class="text-capitalize">texto capitalizado.&lt;/p>
+          </pre>
+
+
+          <h2>Citações</h2>
+
+          <p>É possível fazer citações por meio do elemento <code>&lt;blockquote></code>. Para referenciar a fonte, utiliza-se o elemento <code>&lt;footer></code>.</p>
+
+          <p>Além disso, podemos customizar o posicionamento da citação, por meio da classe <code>.blockquote-reverse</code>.</p>
+
+          <h4>Exemplo</h4>
+          <blockquote>
+            <p>One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.</p>
+            <footer>Gandalf, The Grey</footer>
+          </blockquote>
+
+          <pre>
+&lt;blockquote>
+  &lt;p>One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.&lt;/p>
+  &lt;footer>Gandalf, The Grey&lt;/footer>
+&lt;/blockquote>
+          </pre>
+
+          <h2>Listas</h2>
+
+          <p>O Bootstrap fornece várias opções para criar listas na sua página web. Por meio do Bootstrap, você pode criar listas ordenadas, desornedas, horizontais, descritivas, entre outras.</p>
+
+          <p>Para listas ordenadas/desordenadas, utilizamos os elementos <code>&lt;ul></code> e <code>&lt;ol></code>, respectivamente.</p>
+
+          <p>Para listas horizontais, basta incluir a classe <code>.list-inline</code>.</p>
+
+          <p>As listas descrivitas podem ser organizadas tanto verticalmente quanto lado-a-lado. Por padrão, as listas possuem alinhamento vertical. Porém se quiser alinhá-la horizontalmente, basta incluir a classe <code>.dl-horizontal</code> no elemento <code>&lt;dl></code></p>
+
+          <h4>Exemplo</h4>
+
+          <div class="row">
+            <div class="col-xs-4">
+              <ul> 
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ul>
+            </div>
+            <div class="col-xs-4">
+              <ol>
+                <li>Primeiro Item</li>
+                <li>Segundo Item</li>
+                <li>Terceiro Item</li>
+              </ol>
+            </div>
+            <div class="col-xs-4">
+              <dl>
+                <dt>Título do item 1</dt>
+                <dd>Descrição do item 1</dd>
+                <dt>Título do item 2</dt>
+                <dd>Descrição do item 2</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <dl class="dl-horizontal">
+                <dt>Título do item 1</dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. </dd>
+                <dt>Título do item 2</dt>
+                <dd>Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</dd>
+              </dl>
+            </div>
+          </div>
+
+          <pre>
+&lt;ul> 
+  &lt;li>Item 1&lt;/li>
+  &lt;li>Item 2&lt;/li>
+  &lt;li>Item 3&lt;/li>
+&lt;/ul>
+
+&lt;ol>
+  &lt;li>Primeiro Item&lt;/li>
+  &lt;li>Segundo Item&lt;/li>
+  &lt;li>Terceiro Item&lt;/li>
+&lt;/ol>
+
+&lt;dl>
+  &lt;dt>Título do item 1&lt;/dt>
+  &lt;dd>Descrição do item 1&lt;/dd>
+  &lt;dt>Título do item 2&lt;/dt>
+  &lt;dd>Descrição do item 2&lt;/dd>
+&lt;/dl>
+
+&lt;dl class="dl-horizontal">
+  &lt;dt>Título do item 1&lt;/dt>
+  &lt;dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. &lt;/dd>
+  &lt;dt>Título do item 2&lt;/dt>
+  &lt;dd>Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/dd>
+&lt;dl>
+          </pre>
+
+      </div>
+
+      <div class="section">
+        <h1 class="page-header">Componentes HTML</h1>
+
+        <p class="lead"></p>
+
+      </div>
+
+      <div class="section">
+        <h1 class="page-header">Referências</h1>
+      </div>
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

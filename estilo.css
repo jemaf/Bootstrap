@@ -1,0 +1,14 @@
+#main {
+  margin: 30px; }
+
+#example-grid01 .col-md-1, #example-grid01 .col-md-4, #example-grid01 .col-md-6, #example-grid01 .col-md-8 {
+  background-color: yellow; }
+
+#example-grid02 .col-md-1, #example-grid02 .col-md-4, #example-grid02 .col-md-6, #example-grid02 .col-md-8 {
+  background-color: green; }
+
+.background-cell, #example-grid01 .col-md-1, #example-grid01 .col-md-4, #example-grid01 .col-md-6, #example-grid01 .col-md-8, #example-grid02 .col-md-1, #example-grid02 .col-md-4, #example-grid02 .col-md-6, #example-grid02 .col-md-8 {
+  border: 1px solid rgba(86, 61, 124, 0.2);
+  margin: 5px 0px; }
+
+/*# sourceMappingURL=estilo.css.map */

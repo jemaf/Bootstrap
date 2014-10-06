@@ -10,8 +10,6 @@
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="estilo.css">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<div class="jumbotron">
@@ -775,7 +773,505 @@
 &lt;dl>
           </pre>
 
+          <h1 class="page-header">Tabelas</h1>
+
+          <p>Bootstrap fornece uma série de estilos para customização de tabelas. Para isso, deve-se adicionar a classe <code>.table</code> a tabela que você deseja customizar.</p>
+
+
+          <table class="table">
+            <thead>
+              <tr>
+                <td><strong>Matrícula</strong></td> <td><strong>Nome</strong></td> <td><strong>Sobrenome</strong></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>67852</td> <td>Celso</td> <td>Farias</td>
+              </tr>
+              <tr>
+                <td>2367184</td> <td>Carlos</td> <td>Queiroz</td>
+              </tr>
+              <tr>
+                <td>8796</td> <td>Mauro</td> <td>Cezar</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <pre>
+&lt;table class="table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Matrícula&lt;/td&gt; &lt;td&gt;Nome&lt;/td&gt; &lt;td&gt;Sobrenome&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;67852&lt;/td&gt; &lt;td&gt;Celso&lt;/td&gt; &lt;td&gt;Farias&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2367184&lt;/td&gt; &lt;td&gt;Carlos&lt;/td&gt; &lt;td&gt;Queiroz&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8796&lt;/td&gt; &lt;td&gt;Mauro&lt;/td&gt; &lt;td&gt;Cezar&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+        </pre>
+
+
+        <p>É possível aplicar outros estilos, adicionando outras classes em conjunto com <code>.table</code>. Segue abaixo algusn exemplos de customização</p>
+
+
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <td><strong>Matrícula</strong></td> <td><strong>Nome</strong></td> <td><strong>Sobrenome</strong></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>67852</td> <td>Celso</td> <td>Farias</td>
+              </tr>
+              <tr>
+                <td>2367184</td> <td>Carlos</td> <td>Queiroz</td>
+              </tr>
+              <tr>
+                <td>8796</td> <td>Mauro</td> <td>Cezar</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <p>Utilize a classe <code>.table-bordered</code> para modificar o aspecto da tabela.</p>
+            <pre>
+&lt;table class="table table-bordered"&gt;
+  ...
+&lt;/table&gt;
+            </pre>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <td><strong>Matrícula</strong></td> <td><strong>Nome</strong></td> <td><strong>Sobrenome</strong></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>67852</td> <td>Celso</td> <td>Farias</td>
+              </tr>
+              <tr>
+                <td>2367184</td> <td>Carlos</td> <td>Queiroz</td>
+              </tr>
+              <tr>
+                <td>8796</td> <td>Mauro</td> <td>Cezar</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <p>Utilize a classe <code>.table-hover</code> para adicionar um efeito de hover nas linhas da tabela.</p>
+            <pre>
+&lt;table class="table table-hover"&gt;
+  ...
+&lt;/table&gt;
+            </pre>
+          </div>
+        </div>
+
+
+        <h2>Estilizando Linhas das Tabelas</h2>
+
+        <p>O Bootstrap fornece classes para estilizar tanto linhas quanto células individuais de uma tabela:</p>
+
+        <table class="table table-condensed">
+          <thead>
+            <tr><td><strong>Classe</strong></td> <td><strong>Funcionalidade</strong></td></tr>
+          </thead>
+          <tbody>
+            <tr class="active"><td><code>.active</code></td> <td>Indica algo selecionado.</td></tr>
+            <tr class="success"><td><code>.success</code></td> <td>Indica algo positivo.</td></tr>
+            <tr class="info"><td><code>.info</code></td> <td>Indica algo informativo.</td></tr>
+            <tr class="warning"><td><code>.warning</code></td> <td>Indica cuidado, atenção.</td></tr>
+            <tr class="danger"><td><code>.danger</code></td> <td>Indica algo negativo.</td></tr>
+          </tbody>
+        </table>
+        <pre>
+&lt;table class="table table-condensed"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Classe&lt;/strong&gt;&lt;/td&gt; &lt;td&gt;&lt;strong&gt;Funcionalidade&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr class="active"&gt;&lt;td&gt;&lt;code&gt;.active&lt;/code&gt;&lt;/td&gt; &lt;td&gt;Indica algo selecionado.&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="success"&gt;&lt;td&gt;&lt;code&gt;.success&lt;/code&gt;&lt;/td&gt; &lt;td&gt;Indica algo positivo.&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="info"&gt;&lt;td&gt;&lt;code&gt;.info&lt;/code&gt;&lt;/td&gt; &lt;td&gt;Indica algo informativo.&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="warning"&gt;&lt;td&gt;&lt;code&gt;.warning&lt;/code&gt;&lt;/td&gt; &lt;td&gt;Indica cuidado, atenção.&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="danger"&gt;&lt;td&gt;&lt;code&gt;.danger&lt;/code&gt;&lt;/td&gt; &lt;td&gt;Indica algo negativo.&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;          
+        </pre>
+
+
+        <h1 class="page-header">Forms</h1>
+
+        <p class="lead">Os formulários representram o principal canal de comunicação entre o usuário e sua página web. Bootstrap também fornece um leque de customizações voltadas especificamente para sua implementação.</p>
+
+        <h2>Configuração Geral</h2>
+
+        <p>Os elementos <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, e <code>&lt;select&gt;</code> são definidos com <code>width: 100%;</code>.</p>
+
+        <p>Além disso, cada campo do formulário (<code>&lt;label&gt;</code> e <code>&lt;input&gt;</code>) devem estar dentro de uma <code>&lt;div class="form-group"&gt;</code>.</p>
+        <br>
+
+        <form role="form">
+          <div class="form-group">
+            <label for="inputEmail">Endereço de E-mail</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Entre com seu e-mail">
+          </div>
+          <div class="form-group">
+            <label for="inputSenha">Senha</label>
+            <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"/> Estou de acordo com os termos
+            </label>
+          </div>
+          <button type="submit" class="btn btn-default">Enviar</button>
+        </form>
+        <br>
+        <pre>
+ &lt;form role="form"&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="inputEmail"&gt;Endereço de E-mail&lt;/label&gt;
+    &lt;input type="email" class="form-control" id="inputEmail" placeholder="Entre com seu e-mail"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="inputSenha"&gt;Senha&lt;/label&gt;
+    &lt;input type="password" class="form-control" id="inputSenha" placeholder="Senha"&gt;
+  &lt;/div&gt;
+  &lt;div class="checkbox"&gt;
+    &lt;label&gt;
+      &lt;input type="checkbox"/&gt; Estou de acordo com os termos
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-default"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;         
+        </pre>
+
+
+        <h2>Form Horizontal</h2>
+
+        <p>O Bootstrap fornece um estilo que alinha os dois campos horizontalmente. Para isso, deve-se utilizar a classe <code>.form-horizontal</code>. Além disso, é necessário configurar quanto de espaço a <code>&lt;label&gt;</code> e o <code>&lt;input&gt;</code> irão ocupar. Esse espaço pode ser definido por meio das propriedades <code>col-*-*</code>.</p>
+
+        <h4>Exemplo</h4>
+
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword3" placeholder="Senha">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Lembrar meus dados
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Registrar</button>
+            </div>
+          </div>
+        </form>
+
+        <pre>
+&lt;form class="form-horizontal" role="form"&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="inputEmail3" class="col-sm-2 control-label"&gt;Email&lt;/label&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;input type="email" class="form-control" id="inputEmail3" placeholder="Email"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="inputPassword3" class="col-sm-2 control-label"&gt;Senha&lt;/label&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;input type="password" class="form-control" id="inputPassword3" placeholder="Senha"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;div class="col-sm-offset-2 col-sm-10"&gt;
+      &lt;div class="checkbox"&gt;
+        &lt;label&gt;
+          &lt;input type="checkbox"&gt; Lembrar meus dados
+        &lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;div class="col-sm-offset-2 col-sm-10"&gt;
+      &lt;button type="submit" class="btn btn-default"&gt;Registrar&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+        </pre>
+
+
+        <h2>Desabilitando Controles</h2>
+
+        <p>Os controles do formulário podem ser desabilitados por meio do atributo booleano <code>disabled</code>. Se utilizado em um <code>&lt;fieldset&gt;</code> o atributo irá desabilitar todos os componentes dentro deste <code>&lt;fieldset&gt;</code>.</p>
+
+        <h4>Exemplo</h4>
+
+        <form role="form">
+          <fieldset>
+            <div class="form-group">
+              <label for="disabledTextInput">Campo desabilitado</label>
+              <input type="text" id="disabledTextInput" class="form-control" placeholder="Campo desabilitado" disabled>
+            </div>
+            <div class="form-group">
+              <label for="disabledSelect">Menu desabilitado</label>
+              <select id="disabledSelect" class="form-control" disabled>
+                <option>Opção desabilitada</option>
+              </select>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" disabled> Desabilitado.
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary" disabled>OK</button>
+          </fieldset>
+        </form>
+        <br>
+        <pre>
+&lt;form role="form"&gt;
+  &lt;fieldset&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="disabledTextInput"&gt;Disabled input&lt;/label&gt;
+      &lt;input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" disabled&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="disabledSelect"&gt;Disabled select menu&lt;/label&gt;
+      &lt;select id="disabledSelect" class="form-control" disabled&gt;
+        &lt;option&gt;Disabled select&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class="checkbox"&gt;
+      &lt;label&gt;
+        &lt;input type="checkbox" disabled&gt; Can't check this
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="btn btn-primary" disabled&gt;Submit&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+        </pre>
+
+        <h2>Estilos para Validações</h2>
+
+        <p>Bootstrap fornece um conjunto de estilos para validação de campos por meio das propriedades <code>.has-warning</code>, <code>.has-error</code>, <code>.has-success</code>. Para isso, basta adicionar uma das propriedades ao <code>.form-group</code> de cada campo do formulário.</p>
+
+        <h4>Exemplo</h4>
+
+        <form role="form">
+          <div class="form-group has-success">
+            <label class="control-label" for="inputSuccess1">Input com sucesso</label>
+            <input type="text" class="form-control" id="inputSuccess1">
+          </div>
+          <div class="form-group has-warning">
+            <label class="control-label" for="inputWarning1">Input com warning</label>
+            <input type="text" class="form-control" id="inputWarning1">
+          </div>
+          <div class="form-group has-error">
+            <label class="control-label" for="inputError1">Input com erro</label>
+            <input type="text" class="form-control" id="inputError1">
+          </div>
+        </form>    
+
+        <pre>
+&lt;div class="form-group has-success"&gt;
+  &lt;label class="control-label" for="inputSuccess1"&gt;Input com sucesso&lt;/label&gt;
+  &lt;input type="text" class="form-control" id="inputSuccess1"&gt;
+&lt;/div&gt;
+&lt;div class="form-group has-warning"&gt;
+  &lt;label class="control-label" for="inputWarning1"&gt;Input com warning&lt;/label&gt;
+  &lt;input type="text" class="form-control" id="inputWarning1"&gt;
+&lt;/div&gt;
+&lt;div class="form-group has-error"&gt;
+  &lt;label class="control-label" for="inputError1"&gt;Input com erro&lt;/label&gt;
+  &lt;input type="text" class="form-control" id="inputError1"&gt;
+&lt;/div&gt;
+        </pre>
+
+
+        <h2>Tamanho dos Controles</h2>
+
+        <h3>Fontes</h3>
+        Os controles podem ter o tamanho da sua fonte configurada por meio de classes como <code>.input-lg</code> ou <code>.input-sm</code>.
+
+        <h4>Exemplo</h4>
+
+        <div class="row">
+          <div class="col-md-4">
+            <form role="form">
+              <input class="form-control input-lg" type="text" placeholder=".input-lg"> <br>
+              <input class="form-control" type="text" placeholder="Tamanho padrão"> <br>
+              <input class="form-control input-sm" type="text" placeholder=".input-sm"> <br>
+
+              <select class="form-control input-lg">
+                <option>.input-lg</option>
+              </select> <br>
+              <select class="form-control">
+                <option>Tamanho padrão</option>
+              </select> <br>
+              <select class="form-control input-sm">
+                <option>.input-sm</option>
+              </select> <br>
+            </form>
+          </div>
+          <div class="col-md-8">
+            <pre>
+&lt;input class="form-control input-lg" type="text" placeholder=".input-lg"&gt;
+&lt;input class="form-control" type="text" placeholder="Default input"&gt;
+&lt;input class="form-control input-sm" type="text" placeholder=".input-sm"&gt;
+
+&lt;select class="form-control input-lg"&gt;...&lt;/select&gt;
+&lt;select class="form-control"&gt;...&lt;/select&gt;
+&lt;select class="form-control input-sm"&gt;...&lt;/select&gt;
+            </pre>
+          </div>
+        </div>
+
+        <h3>Largura</h3>
+
+        <p>De forma similar, a largura dos controles pode ser definida por meio das classes <code>col-*-*</code>.</p>
+
+        <h4>Exemplo</h4>
+
+        <div class="row">
+          <div class="col-xs-2">
+            <input type="text" class="form-control" placeholder=".col-xs-2">
+          </div>
+          <div class="col-xs-3">
+            <input type="text" class="form-control" placeholder=".col-xs-3">
+          </div>
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder=".col-xs-4">
+          </div>
+        </div>
+        <br>
+        <pre>
+&lt;div class="row"&gt;
+  &lt;div class="col-xs-2"&gt;
+    &lt;input type="text" class="form-control" placeholder=".col-xs-2"&gt;
+  &lt;/div&gt;
+  &lt;div class="col-xs-3"&gt;
+    &lt;input type="text" class="form-control" placeholder=".col-xs-3"&gt;
+  &lt;/div&gt;
+  &lt;div class="col-xs-4"&gt;
+    &lt;input type="text" class="form-control" placeholder=".col-xs-4"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+
+        <h1 class="page-header">Botões</h1>
+
+        <p>Bootstrap possui uma série de estilos predefinidos de botões, que podem ser aplicados nos elementos <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> e <code>&lt;input&gt;</code>.</p>
+
+        <p>Similar as tabelas, devemos atribuir a class <code>.btn</code> seguida do estilo do botão no qual se deseja aplicar. são eles: <code>.btn-default</code>, <code>.btn-primary</code>, <code>.btn-sucess</code>, <code>.btn-info</code>, <code>.btn-warning</code>, <code>.btn-danger</code>, <code>.btn-link</code></p>
+
+        <h4>Exemplo</h4>
+        <button type="button" class="btn btn-default">.btn-default</button>
+        <button type="button" class="btn btn-primary">.btn-primary</button>
+        <button type="button" class="btn btn-success">.btn-success</button>
+        <button type="button" class="btn btn-info">.btn-info</button>
+        <button type="button" class="btn btn-warning">.btn-warning</button>
+        <button type="button" class="btn btn-danger">.btn-danger</button>
+        <button type="button" class="btn btn-link">.btn-link</button>
+        <br>
+        <br>
+        <pre>
+&lt;button type="button" class="btn btn-default"&gt;.btn-default&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary"&gt;.btn-primary&lt;/button&gt;
+&lt;button type="button" class="btn btn-success"&gt;.btn-success&lt;/button&gt;
+&lt;button type="button" class="btn btn-info"&gt;.btn-info&lt;/button&gt;
+&lt;button type="button" class="btn btn-warning"&gt;.btn-warning&lt;/button&gt;
+&lt;button type="button" class="btn btn-danger"&gt;.btn-danger&lt;/button&gt;
+&lt;button type="button" class="btn btn-link"&gt;.btn-link&lt;/button&gt;
+        </pre>
+
+        <h2>Tamanho dos Botões</h2>
+
+        <p>Assim como o formulário, Bootstrap permite definir um tamanho para os botões. Essa customização poder ser feita através das classes <code>.btn-lg</code>, <code>.btn-sm</code>, e <code>.btn-xs</code>.</p>
+
+        <h4>Exemplo</h4>
+        <p>
+          <button type="button" class="btn btn-primary btn-lg">Large button</button>
+          <button type="button" class="btn btn-default btn-lg">Large button</button>
+        </p>
+        <p>
+          <button type="button" class="btn btn-primary">Default button</button>
+          <button type="button" class="btn btn-default">Default button</button>
+        </p>
+        <p>
+          <button type="button" class="btn btn-primary btn-sm">Small button</button>
+          <button type="button" class="btn btn-default btn-sm">Small button</button>
+        </p>
+        <p>
+          <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+          <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+        </p>
+
+        <pre>
+  &lt;button type="button" class="btn btn-primary btn-lg"&gt;Large button&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default btn-lg"&gt;Large button&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Default button&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default"&gt;Default button&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary btn-sm"&gt;Small button&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default btn-sm"&gt;Small button&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary btn-xs"&gt;Extra small button&lt;/button&gt;
+  &lt;button type="button" class="btn btn-default btn-xs"&gt;Extra small button&lt;/button&gt;
+        </pre>
+
+        <h1 class="page-header">Imagens</h1>
+
+        <p>No que diz respeito a imagens, o Bootstrap fornece a classe <code>.img-responsive</code> para tornar uma imagem responsiva. Na prática, essa classe irá aplicar as propriedades <code>max-width: 100%;</code> e <code>height: auto;</code> a imagem.</p>
+
+        <p>Além disso, Bootstrap fornece estilos predefinidos para bordas de imagens através das classes  <code>.img-rounded</code>, <code>.img-circle</code> e <code>.img-thumbnail</code>.</p>
+
+        <h4>Exemplo</h4>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <img src="res/img/dilma.jpg" alt="Dilma" class="img-responsive img-rounded">
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <img src="res/img/marina.jpg" alt="Marina" class="img-responsive img-circle">
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <img src="res/img/aecio.jpg" alt="Aécio" class="img-responsive img-thumbnail">
+          </div>
+        </div>
+
+
       </div>
+
+
 
       <div class="section">
         <h1 class="page-header">Componentes HTML</h1>

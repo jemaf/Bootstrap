@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarContent">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bootstrap 101</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="setup.html">Setup</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="components.html">Componentes</a></li>
+            <li><a href="exercises.html">Exercícios</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <h1>Bootstrap 101 <small>Componentes</small></h1>
+      <p>
+        João Eduardo Montandon <br>
+        Desenvolvimento de Aplicações Web - COLTEC/UFMG
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-10">
+          <h1 class="page-header">Componentes HTML</h1>
+
+          <p class="lead">
+            Além de prover customizações para os elementos HTML existentes, o Bootstrap criou uma série de componentes HTML responsivo para agilizar o processo de desenvolvimento de páginas web, tais como ícones, listas, barras de navegação, etc. Esta sessão irá mostrar alguns exemplos de utilização de tais componentes.
+          </p>
+
+          <h1 class="page-header">Glyphicons</h1>
+
+          <p>Bootstrap possui um conjunto com mais de 200 ícones vetorizados para utilização. Esses ícones foram disponíveis gratuitamente pela biblioteca <a href="http://glyphicons.com/">Glyphicons</a>.</p>
+
+          <p>Para utilizar um dos ícones disponíveis, devemos criar um <code>&lt;span&gt;</code> vazio, e aplicar a classe <code>.glyphicon</code> seguida da classe que representa o ícone que você deseja importar. A lista dos ícones disponíveis está disponível na <a href="http://getbootstrap.com/components/#glyphicons">documentação</a>.</p>
+
+          <h4>Exemplo</h4>
+
+          <div class="row">
+            <div class="col-xs-4">
+              <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-star"></span> Favorito
+              </button>
+            </div>
+            <div class="col-xs-8">
+              <pre>
+  &lt;button type="button" class="btn btn-default btn-lg"&gt;
+    &lt;span class="glyphicon glyphicon-star"&gt;&lt;/span&gt; Favorito
+  &lt;/button&gt;              
+              </pre>
+            </div>
+          </div>
+
+          <h1 class="page-header">Dropdowns</h1>
+
+          <p>Bootstrap fornece formas de se criar um componente de dropdown. Para utilizá-lo, deve-se criar um <code>&lt;button&gt;</code> com a classe <code>.dropdown</code> e uma propriedade <code>data-toggle="dropdown"</code>. Em seguida, basta criar uma lista que referencie este botão por meio da propriedade <code>aria-labelledby="buttonId"</code>.</p>
+
+          <h4>Exemplo</h4>
+
+          <div class="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+              Opções <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <li><a href="#">Opção 1</a></li>
+              <li><a href="#">Opção 2</a></li>
+              <li><a href="#">Opçao 3</a></li> 
+            </ul>
+          </div>
+          <br>
+          <pre>
+  &lt;div class="dropdown"&gt;
+    &lt;a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html"&gt;
+      Opções &lt;span class="caret"&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;ul class="dropdown-menu" role="menu" aria-labelledby="dLabel"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Opção 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Opção 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Opçao 3&lt;/a&gt;&lt;/li&gt; 
+    &lt;/ul&gt;
+  &lt;/div&gt;
+          </pre>
+   
+
+          <h1 class="page-header">Grupos de Input</h1>
+
+          <p>Bootstrap permite agrupar controles HTML em um campo de <code>&lt;input&gt;</code>, presente nos formulários HTML. Para isto devemos criar uma <code>&lt;div&gt;</code> com a classe <code>.input-group</code> e então inserir dentro dessa <code>&lt;div&gt;</code> o <code>&lt;input&gt;</code> do campo desejado e um <code>&lt;span&gt;</code> com a classe <code>input-group-addon</code>. Esse <code>&lt;span&gt;</code> irá conter o controle a HTML a ser agrupado ao input</p>
+
+          <h4>Exemplo</h4>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="text" class="form-control" placeholder="Twitter">
+              </div>
+              <br>
+              <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-addon">.00</span>
+              </div>
+              <br>
+              <div class="input-group">
+                <span class="input-group-addon">R$</span>
+                <input type="text" class="form-control">
+                <span class="input-group-addon">.00</span>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <pre>
+  &lt;div class="input-group"&gt;
+    &lt;span class="input-group-addon"&gt;@&lt;/span&gt;
+    &lt;input type="text" class="form-control" placeholder="Twitter"&gt;
+  &lt;/div&gt;
+
+  &lt;div class="input-group"&gt;
+    &lt;input type="text" class="form-control"&gt;
+    &lt;span class="input-group-addon"&gt;.00&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div class="input-group"&gt;
+    &lt;span class="input-group-addon"&gt;R$&lt;/span&gt;
+    &lt;input type="text" class="form-control"&gt;
+    &lt;span class="input-group-addon"&gt;.00&lt;/span&gt;
+  &lt;/div&gt;
+              </pre>
+            </div>
+          </div>
+
+
+          <h1 class="page-header">Menus/Navs</h1>
+
+          <p>Bootstrap oferece uma série de estilos para menus, por meio do elemento <code>&lt;nav&gt;</code>. Para utilizá-los, deve-se adicionar a classe <code>.nav</code> a um elemento <code>&lt;ul&gt;</code> seguida do estilo desejado para o menu. O Bootstrap fornece dois tipos de menu: 
+
+          <ul>
+            <li><strong>Abas (Tabs)</strong>, por meio da classe <code>.nav-tabs</code></li>
+            <li><strong>Pílulas (Pills)</strong>, por meio da classe <code>.nav-pills</code></li>
+          </ul>
+            
+          <h2>Tabs</h2>
+
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Messages</a></li>
+          </ul>
+          <br>
+          <pre>
+  &lt;ul class="nav nav-tabs" role="tablist"&gt;
+    &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+          </pre>
+
+          <h2>Pills</h2>
+
+          <ul class="nav nav-pills">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Messages</a></li>
+          </ul>
+          <br>
+          <pre>
+  &lt;ul class="nav nav-pills"&gt;
+    &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;          
+          </pre>
+          <br>
+          <p> Além disso, menus que possuam a classe <code>.nav-pills</code> podem ser alinhados verticalmente por meio da propriedade <code>.nav-stacked</code>.</p>
+
+          <div class="row">
+            <div class="col-xs-4">
+              <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Messages</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-8">
+              <pre>
+  &lt;ul class="nav nav-pills nav-stacked"&gt;
+    &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+              </pre>
+            </div>
+          </div>
+          
+          <h1 class="page-header">Barras de Navegação (Navbars)</h1>
+
+          <p class="lead">Bootstrap também fornece meios para se criar navbars em sua página web. Por padrão tais navbars possuem um comportamento responsivo: elas se tornam expandíveis quando sofrem ação do usuário.</p>
+
+          <h2>Configuração Básica</h2>
+
+          <p>O código abaixo mostra um exemplo básico de utilização de uma navbar:</p>
+
+          <pre>
+  &lt;nav class="navbar navbar-default"&gt;
+    &lt;div class="container-fluid"&gt;
+      &lt;div class="navbar-header"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;MinhaPaginaWeb&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;ul class="nav navbar-nav"&gt;
+          &lt;li class="active"&gt;&lt;a href="#"&gt;Início&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;About me&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Experimentos&lt;/a&gt;&lt;/li&gt; 
+          &lt;li&gt;&lt;a href="#"&gt;Links Relacionados&lt;/a&gt;&lt;/li&gt; 
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+          </pre>
+
+          <p>Como se pode observar, uma nav bar é implementada por meio do elemento <code>&lt;nav&gt;</code>, e deve possuir as classes <code>.navbar</code> e <code>.navbar-default</code>.</p>
+
+          <p>Uma vez declarado o elemento <code>&lt;nav&gt;</code>, deve-se implementar as <code>&lt;div&gt;</code>s que serão responsáveis pelo header e corpo da navbar. O header deverá ser criado com a classe <code>.navbar-header</code>.</p>
+
+          <p>O corpo, por sua vez, deverá conter um elemento <code>&lt;ul class="nav navbar-nav"&gt;</code>. Esse elemento representa as opções que serão exibidas no menu.</p>
+
+          <p>Se implementado conforme o código descrito acima, a navbar possuirá o seguinte aspecto:</p>
+
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">MinhaPaginaWeb</a>
+              </div>
+              <div>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Início</a></li>
+                  <li><a href="#">About me</a></li>
+                  <li><a href="#">Experimentos</a></li> 
+                  <li><a href="#">Links Relacionados</a></li> 
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <h3>Navbar Invertida</h3>
+
+          <p>Caso o estilo da navbar não combina muito bem com sua página, você pode utilizar a classe <code>.navbar-inverse</code> para utilizar um estilo alternativo (escuro) para a navbar.</p>
+
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-5">
+              <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">MinhaPaginaWeb</a>
+                  </div>
+                  <div>
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="#">Início</a></li>
+                      <li><a href="#">...</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <div class="col-xs-12 col-sm-7">
+              <pre>
+  &lt;nav class="navbar navbar-inverse"&gt;
+    &lt;div class="container-fluid"&gt;
+      &lt;div class="navbar-header"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;MinhaPaginaWeb&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;ul class="nav navbar-nav"&gt;
+          &lt;li class="active"&gt;&lt;a href="#"&gt;Início&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;...&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;              
+              </pre>
+            </div>
+          </div>
+
+
+          <h2>Navbar Fixa</h2>
+
+          <p>Bootstrap também fornece opções para "fixar" a navbar no topo ou no fim da tela, de forma que a navbar fique sempre visível. Para isso, utilizam-se as classes <code>.navbar-fixed-top</code> e <code>.navbar-fixed-bottom</code>, respecitvamente.</p>
+
+          <pre>
+  &lt;nav class="navbar navbar-inverse navbar-fixed-top"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;div class="navbar-header"&gt;
+      &lt;a class="navbar-brand" href="#"&gt;MinhaPaginaWeb&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;ul class="nav navbar-nav"&gt;
+        &lt;li class="active"&gt;&lt;a href="#"&gt;Início&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About me&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Experimentos&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href="#"&gt;Links Relacionados&lt;/a&gt;&lt;/li&gt; 
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/nav&gt;
+          </pre>
+
+          <h2>Navbar e Submenus</h2>
+
+          <p>Os submenus de uma navbar podem ser implementados por meio de um dropdown. Neste caso, devemos implementar o dropdown normalmente, porém dentro da div que representa o corpo da navbar.</p>
+
+          <h4>Exemplo</h4>
+
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">MinhaPaginaWeb</a>
+              </div>
+              <div>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Início</a></li>
+                  <li><a href="#">About me</a></li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Experimentos
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Experimento 1</a></li>
+                      <li><a href="#">Experimento 2</a></li>
+                      <li><a href="#">Experimento 3</a></li> 
+                    </ul>
+                  </li> 
+                  <li><a href="#">Links Relacionados</a></li> 
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <pre>
+  &lt;nav class="navbar navbar-inverse"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;div class="navbar-header"&gt;
+      &lt;a class="navbar-brand" href="#"&gt;WebSiteName&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;ul class="nav navbar-nav"&gt;
+        &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="dropdown"&gt;
+          &lt;a class="dropdown-toggle" data-toggle="dropdown" href="#"&gt;Page 1
+          &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+          &lt;ul class="dropdown-menu"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Page 1-1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Page 1-2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Page 1-3&lt;/a&gt;&lt;/li&gt; 
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Page 2&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href="#"&gt;Page 3&lt;/a&gt;&lt;/li&gt; 
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/nav&gt;          
+          </pre>
+
+          <h2>Navbar Alinhada a Direita</h2>
+
+          <p>Os itens de uma navbar podem ser alinhados à direita, se desejado. Para isso, basta utilizar a classe <code>.navbar-right</code>.</p>
+
+          <h4>Exemplo</h4>
+
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">MinhaPaginaWeb</a>
+              </div>
+              <div>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Início</a></li>
+                  <li><a href="#">About me</a></li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Experimentos
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Experimento 1</a></li>
+                      <li><a href="#">Experimento 2</a></li>
+                      <li><a href="#">Experimento 3</a></li> 
+                    </ul>
+                  </li> 
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrar</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <pre>
+  &lt;nav class="navbar navbar-inverse"&gt;
+    &lt;div class="container-fluid"&gt;
+      &lt;div class="navbar-header"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;MinhaPaginaWeb&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;ul class="nav navbar-nav"&gt;
+          &lt;li class="active"&gt;&lt;a href="#"&gt;Início&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;About me&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="dropdown"&gt;
+            &lt;a class="dropdown-toggle" data-toggle="dropdown" href="#"&gt;Experimentos
+            &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+            &lt;ul class="dropdown-menu"&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Experimento 1&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Experimento 2&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Experimento 3&lt;/a&gt;&lt;/li&gt; 
+            &lt;/ul&gt;
+          &lt;/li&gt; 
+        &lt;/ul&gt;
+        &lt;ul class="nav navbar-nav navbar-right"&gt;
+          &lt;li&gt;&lt;a href="#"&gt;&lt;span class="glyphicon glyphicon-user"&gt;&lt;/span&gt; Registrar&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;&lt;span class="glyphicon glyphicon-user"&gt;&lt;/span&gt; Login&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+          </pre>
+
+
+          <h2>Navbar para Mobile</h2>
+
+          <p>Para tornar a navbar responsiva a dispositivos mobile, devemos implementar um botão que irá representar a abertura do menu, e definir qual componente será expandido quando o botão for clicado.</p>
+
+          <p>Mais especificamente, o botão deverá possuir os seguintes atributos: <code>class="navbar-toggle"</code>, <code>data-toggle="collapse"</code>, e <code>data-target="#idConteudoNavbar"</code>. O atributo <code>class="navbar-toggle"</code> informa a navbar que este botão ficará posicionado a direita da navbar quando ela mudar seu layout para mobile. O atributo <code>data-toggle="collapse"</code> informa que este botão implementa uma ação de expansão, se clicado. Por fim o atributo <code>data-target="#idConteudoNavbar"</code> informa qual elemento HTML será expandido ou retraído pelo botão.</p>
+
+          <p>Além disso, precisamos configurar a <code>&lt;div&gt;</code> que irá se expandir/retrair. Para isso, devemos adicionar as classes <code>.collapse</code> e <code>.navbar-collapse</code> para indicar que essa div é expansível, além de definir o mesmo <code>id</code> que foi definido no botão anteriormente.</p>
+
+          <p>Observe atentamente o exemplo abaixo para entender o funcionamento da navbar:</p>
+
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarSite">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span> 
+                </button>
+                <a class="navbar-brand" href="#">MinhaPaginaWeb</a>
+              </div>
+              <div class="collapse navbar-collapse" id="navbarSite">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Início</a></li>
+                  <li><a href="#">About me</a></li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Experimentos
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Experimento 1</a></li>
+                      <li><a href="#">Experimento 2</a></li>
+                      <li><a href="#">Experimento 3</a></li> 
+                    </ul>
+                  </li> 
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrar</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <pre>
+  &lt;h2&gt;Navbar para Mobile&lt;/h2&gt;
+  &lt;nav class="navbar navbar-inverse"&gt;
+    &lt;div class="container-fluid"&gt;
+      &lt;div class="navbar-header"&gt;
+        &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarSite"&gt;
+          &lt;span class="icon-bar"&gt;&lt;/span&gt;
+          &lt;span class="icon-bar"&gt;&lt;/span&gt;
+          &lt;span class="icon-bar"&gt;&lt;/span&gt; 
+        &lt;/button&gt;
+        &lt;a class="navbar-brand" href="#"&gt;MinhaPaginaWeb&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="collapse navbar-collapse" id="navbarSite"&gt;
+        &lt;ul class="nav navbar-nav"&gt;
+          &lt;li class="active"&gt;&lt;a href="#"&gt;Início&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;About me&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="dropdown"&gt;
+            &lt;a class="dropdown-toggle" data-toggle="dropdown" href="#"&gt;Experimentos
+            &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+            &lt;ul class="dropdown-menu"&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Experimento 1&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Experimento 2&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Experimento 3&lt;/a&gt;&lt;/li&gt; 
+            &lt;/ul&gt;
+          &lt;/li&gt; 
+        &lt;/ul&gt;
+        &lt;ul class="nav navbar-nav navbar-right"&gt;
+          &lt;li&gt;&lt;a href="#"&gt;&lt;span class="glyphicon glyphicon-user"&gt;&lt;/span&gt; Registrar&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;&lt;span class="glyphicon glyphicon-user"&gt;&lt;/span&gt; Login&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+          </pre>
+
+
+          <h1 class="page-header">Labels</h1>
+
+          <p>Labels podem ser declaradas por meio da classe <code>.label</code> seguida do tipo de label que se deseja criar.</p>
+
+          <h4>Exemplo</h4>
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <span class="label label-default">Default</span>
+              <span class="label label-primary">Primary</span>
+              <span class="label label-success">Success</span>
+              <span class="label label-info">Info</span>
+              <span class="label label-warning">Warning</span>
+              <span class="label label-danger">Danger</span>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+              <pre>
+  &lt;span class="label label-default"&gt;Default&lt;/span&gt;
+  &lt;span class="label label-primary"&gt;Primary&lt;/span&gt;
+  &lt;span class="label label-success"&gt;Success&lt;/span&gt;
+  &lt;span class="label label-info"&gt;Info&lt;/span&gt;
+  &lt;span class="label label-warning"&gt;Warning&lt;/span&gt;
+  &lt;span class="label label-danger"&gt;Danger&lt;/span&gt;
+              </pre>
+            </div>
+          </div>
+
+          <h1 class="page-header">Alertas</h1>
+
+          <p>Bootstrap possui um conjunto de alertas que podem ser utilizados em sua página web. Um alerta pode ser criado por meio da classe <code>.alert</code> seguida do tipo de alerta que se deseja mostrar.</p>
+
+          <p>Se desejado, podemos adicionar a classe <code>.alert-dismissible</code> para adicionar uma opção para que o alerta seja fechado pelo usuário. Além disso, devemos adicionar um elemento HTML </p>
+
+          <h4>Exemplo</h4>
+
+          <div class="alert alert-success alert-dismissible">Alerta informando que algo foi realizado com sucesso</div>
+          <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+            Alerta com algo informativo
+          </div>
+          <div class="alert alert-warning"><strong>Cuidado!!</strong> Você está entrando em uma zona perigosa</div>
+          <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+            <strong>Error code 867.</strong> É melhor fechar esse alerta antes que alguém mais veja.
+          </div>
+
+          <pre>
+  &lt;div class="alert alert-success alert-dismissible"&gt;Alerta informando que algo foi realizado com sucesso&lt;/div&gt;
+  &lt;div class="alert alert-info" &gt;Alerta com algo informativo&lt;/div&gt;
+  &lt;div class="alert alert-warning"&gt;&lt;strong&gt;Cuidado!!&lt;/strong&gt; Você está entrando em uma zona perigosa&lt;/div&gt;
+  &lt;div class="alert alert-danger alert-dismissible"&gt;&lt;strong&gt;Error code 867.&lt;/strong&gt; É melhor fechar esse alerta antes que alguém mais veja.&lt;/div&gt;
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
